@@ -35,8 +35,12 @@ class Application(object):
     '''
     
     __unset__ = []
-    
-    def get_app_runnig_status(self):
+
+    def get_app_runnig_status(self, *args, **kwargs):
+	'''Backwards compatibility for typo, go to get_app_running_status.'''
+	return get_app_running_status(*args, **kwargs)
+
+    def get_app_running_status(self):
         '''
         Get whether this app is running or paused
         Return True / False
